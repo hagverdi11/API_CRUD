@@ -21,7 +21,7 @@ namespace ServiceLayer.Services
             _mapper = mapper;
         }
     
-        public async Task CreateAsync(BookCreateDbo book)
+        public async Task CreateAsync(BookCreateDto book)
         {
            await _repo.Create(_mapper.Map<Book>(book));
         }
@@ -34,8 +34,46 @@ namespace ServiceLayer.Services
         public async Task DeleteAsync(int id) 
         {
             Book book = await _repo.Get(id);
-            if (book == null) throw new NullReferenceException();
+            //if (book == null) throw new NullReferenceException();
             await _repo.Delete(book);
+        }
+
+        public async Task SoftDelete(int id)
+        {
+            Book book = await _repo.Get(id);
+            await _repo.SoftDelete(book);
+        }
+
+        public Task SoftDeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+     
+
+        public async Task UpdateAsync(int id, BookUpdateDto book)
+        {
+            var dbBook = await _repo.Get(id);
+
+            _mapper.Map(book, dbBook);
+
+            await _repo.Update(dbBook);
+        }
+
+        public async Task<List<BookListDto>> SearchAsync(string? searchText)
+        {
+            List<Book> searchDatas = new();
+
+            if (searchText != null)
+            {
+                searchDatas = await _repo.FindAllAsync(m => m.Name.Contains(searchText));
+            }
+            else
+            {
+                searchDatas = await _repo.GetAll();
+            }
+
+            return _mapper.Map<List<BookListDto>>(searchDatas);
         }
     }
 }

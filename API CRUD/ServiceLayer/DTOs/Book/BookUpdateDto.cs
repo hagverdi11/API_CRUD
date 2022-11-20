@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.DTOs.Book
 {
-    public class BookCreateDbo
+    public class BookUpdateDto
     {
         public string? Name { get; set; }
         public string? Author { get; set; }

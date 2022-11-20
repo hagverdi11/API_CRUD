@@ -13,8 +13,10 @@ namespace ServiceLayer.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<BookCreateDbo, Book>();
+            CreateMap<BookCreateDto, Book>();
             CreateMap<Book, BookListDto>();
+            CreateMap<BookUpdateDto, Book>().ReverseMap(); 
+
 
         }
 

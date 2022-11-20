@@ -16,7 +16,7 @@ namespace API_Intro.Controllers
           _bookService= bookService;
         }
         [HttpPost]
-        public async Task <IActionResult> Create([FromBody] BookCreateDbo book)
+        public async Task <IActionResult> Create([FromBody] BookCreateDto book)
         {
             await _bookService.CreateAsync(book);
             return Ok();
@@ -43,6 +43,45 @@ namespace API_Intro.Controllers
             }
 
         }
+
+        [HttpPost]
+        public async Task<IActionResult> SoftDelete([Required] int id)
+        {
+            try
+            {
+                await _bookService.SoftDeleteAsync(id);
+                return Ok();
+            }
+            catch (NullReferenceException)
+            {
+                return NotFound();
+            }
+
+        }
+
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update([FromRoute][Required] int id, BookUpdateDto book)
+        {
+            try
+            {
+                await _bookService.UpdateAsync(id, book);
+                return Ok();
+            }
+            catch (NullReferenceException)
+            {
+                return NotFound();
+            }
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Search(string? search)
+        {
+            return Ok(await _bookService.SearchAsync(search));
+        }
+
 
     }
 }

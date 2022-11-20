@@ -58,19 +58,30 @@ namespace RepositoryLayer.Repositories
        
 
 
-        public Task SoftDelete(T entity)
+        public async Task SoftDelete(T entity)
         {
-            throw new NotImplementedException();
+            T? model = await _entities.FirstOrDefaultAsync(m => m.Id == entity.Id);
+
+            if (model == null) throw new NullReferenceException();
+
+            model.SoftDeleted = true;
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task Update(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null) throw new ArgumentNullException();
+
+            _entities.Update(entity);
+
+            await _context.SaveChangesAsync();
+ 
         }
 
-        public Task<List<T>> FindAllAsync(Expression<Func<T, bool>> expression)
+        public async Task<List<T>> FindAllAsync(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return await _entities.Where(expression).ToListAsync();
         }
     }
 }

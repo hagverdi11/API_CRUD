@@ -2352,11 +2352,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\API Intro\\API Intro.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\API Intro\\API Intro.csproj",
       "projectName": "API Intro",
-      "projectPath": "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\API Intro\\API Intro.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\API Intro\\API Intro.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\API Intro\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\API Intro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2373,11 +2373,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\RepositoryLayer\\RepositoryLayer.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\RepositoryLayer\\RepositoryLayer.csproj"
+            "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\RepositoryLayer\\RepositoryLayer.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\RepositoryLayer\\RepositoryLayer.csproj"
             },
-            "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\ServiceLayer\\ServiceLayer.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\Api\\Homework 1\\API Intro\\ServiceLayer\\ServiceLayer.csproj"
+            "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\ServiceLayer\\ServiceLayer.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\API_CRUD\\API CRUD\\ServiceLayer\\ServiceLayer.csproj"
             }
           }
         }

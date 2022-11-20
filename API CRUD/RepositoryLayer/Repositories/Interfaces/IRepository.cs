@@ -16,6 +16,7 @@ namespace RepositoryLayer.Repositories.Interfaces
         Task Update(T entity);
         Task Delete(T entity);
         Task SoftDelete(T entity);
+
         Task<List<T>> FindAllAsync(Expression<Func<T, bool>> expression);
     }
 }
